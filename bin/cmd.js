@@ -165,7 +165,9 @@ if (action) {
         ? Detector.findFirst
         : Detector.findWhen;
 
-    detectorFunction(condition, detectOpts, function(err, device, rinfo) {
+    var deviceData = argv.device ? { address: argv.device } : null;
+
+    detectorFunction(condition, detectOpts, deviceData, function(err, device, rinfo) {
         if (err) {
             logError(err.message);
             return;
