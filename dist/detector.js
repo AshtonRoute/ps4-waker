@@ -127,7 +127,7 @@ Detector.findWhen = function (filterFn, detectOpts, deviceData, callback) {
     detector.on('close', function () {
         callback(new Error("Could not detect any matching PS4 device"));
     });
-    detector.detect(detectOpts, null, deviceData);
+    detector.detect(detectOpts, deviceData);
 };
 
 /**
