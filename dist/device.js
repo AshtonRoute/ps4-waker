@@ -469,9 +469,9 @@ class Device extends EventEmitter {
             return new Promise(function (resolve, reject) {
                 // if the address opt was provided, detect that
                 //  specific device. Otherwise, detect whatever
-                let fn = _this11.opts.address ? Detector.find.bind(Detector, _this11.opts.address) : Detector.findAny.bind(Detector);
+                let fn = _this11.opts.address ? Detector.find.bind(Detector, _this11.opts.address, _this11.opts, _this11.opts) : Detector.findAny.bind(Detector, _this11.opts, null);
 
-                fn(null, _this11.opts, function (err, device, rinfo) {
+                fn(function (err, device, rinfo) {
                     if (err) return reject(err);
 
                     // NOTE: we probably don't need to pass along rinfo...
