@@ -471,7 +471,7 @@ class Device extends EventEmitter {
                 //  specific device. Otherwise, detect whatever
                 let fn = _this11.opts.address ? Detector.find.bind(Detector, _this11.opts.address) : Detector.findAny.bind(Detector);
 
-                fn(_this11.opts, function (err, device, rinfo) {
+                fn(null, _this11.opts, function (err, device, rinfo) {
                     if (err) return reject(err);
 
                     // NOTE: we probably don't need to pass along rinfo...
